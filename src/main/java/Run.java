@@ -18,26 +18,26 @@ public class Run {
         //Collector object initialised
         HashMapCollector collector = new HashMapCollector();
         //Compilation unit (Root node) initialised
-        CompilationUnit cu = StaticJavaParser.parse(new File(FILE_PATH_2));
+        CompilationUnit cu = StaticJavaParser.parse(new File(FILE_PATH_3));
 
         new MethodCountVisitor().visit(cu, collector);
         new MethodCountPrinter(collector).print();
 
-        new JavaDocVisitor().visit(cu, collector);
-        new JavaDocPrinter(collector).print();
-
-        new MethodLocVisitor().visit(cu, collector);
-        new MethodLocPrinter(collector).print();
-
-        new SyncBlockStmtVisitor().visit(cu, collector);
-        new BlockStmtVisitor().visit(cu, collector);
-        new NestedBlockStmtVisitor().visit(cu, collector);
-        new NestedSyncBlockStmtVisitor().visit(cu, collector);
-        new BlockStmtPrinter(collector).print();
-
-
-        new MethodStmtCountVisitor().visit(cu, collector);
-        new MethodStmtCountPrinter(collector).print();
+//        new JavaDocVisitor().visit(cu, collector);
+//        new JavaDocPrinter(collector).print();
+//
+//        new MethodLocVisitor().visit(cu, collector);
+//        new MethodLocPrinter(collector).print();
+//
+//        new SyncBlockStmtVisitor().visit(cu, collector);
+//        new BlockStmtVisitor().visit(cu, collector);
+//        new NestedBlockStmtVisitor().visit(cu, collector);
+//        new NestedSyncBlockStmtVisitor().visit(cu, collector);
+//        new BlockStmtPrinter(collector).print();
+//
+//
+//        new MethodStmtCountVisitor().visit(cu, collector);
+//        new MethodStmtCountPrinter(collector).print();
 
 
 
