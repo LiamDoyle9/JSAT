@@ -21,7 +21,7 @@ public class JavaDocPrinter extends AbstractPrinter{
     public void print(){
         System.out.println("\n----------------------- JavaDoc Comments -----------------------");
         for(Map.Entry<String, Integer> entry : collector.getJavaDocCollector().entrySet()){
-            System.out.printf("%35s | %35s \n", entry.getKey(), entry.getValue());
+            System.out.printf("%50s | %35s \n", entry.getKey(), entry.getValue());
         }
     }
 }

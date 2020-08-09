@@ -21,7 +21,7 @@ public class MethodLocPrinter extends AbstractPrinter {
     public void print(){
         System.out.println("\n--------------------- Method Lines of Code ---------------------");
         for(Map.Entry<String, Integer> entry : collector.getMethodLocCollector().entrySet()){
-            System.out.printf("%35s | %35s \n", entry.getKey(), entry.getValue());
+            System.out.printf("%50s | %35s \n", entry.getKey(), entry.getValue());
         }
 
 

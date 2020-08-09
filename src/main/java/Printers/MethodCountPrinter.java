@@ -18,7 +18,7 @@ public class MethodCountPrinter extends AbstractPrinter {
     public void print(){
         System.out.println("\n------------------------- Method Count -------------------------");
         for(Map.Entry<String, Integer> entry : collector.getMethodCountCollector().entrySet()){
-            System.out.printf("%35s | %35s \n", entry.getKey(), entry.getValue());
+            System.out.printf("%50s | %35s \n", entry.getKey(), entry.getValue());
         }
     }
 }

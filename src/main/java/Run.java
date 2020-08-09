@@ -9,13 +9,16 @@ import java.io.File;
 public class Run {
 
     protected static final String FILE_PATH_1 = "src/main/java/SleepingBarber.java";
+    protected static final String FILE_PATH_2 = "src/main/java/GenericObjectPool.java";
+    protected static final String FILE_PATH_3 = "src/main/java/RollingFileAppender.java";
+    protected static final String FILE_PATH_4 = "src/main/java/Piper.java";
 
     public static void main(String[] args) throws Exception{
 
         //Collector object initialised
         HashMapCollector collector = new HashMapCollector();
         //Compilation unit (Root node) initialised
-        CompilationUnit cu = StaticJavaParser.parse(new File(FILE_PATH_1));
+        CompilationUnit cu = StaticJavaParser.parse(new File(FILE_PATH_2));
 
         new MethodCountVisitor().visit(cu, collector);
         new MethodCountPrinter(collector).print();
@@ -31,6 +34,7 @@ public class Run {
         new NestedBlockStmtVisitor().visit(cu, collector);
         new NestedSyncBlockStmtVisitor().visit(cu, collector);
         new BlockStmtPrinter(collector).print();
+
 
         new MethodStmtCountVisitor().visit(cu, collector);
         new MethodStmtCountPrinter(collector).print();

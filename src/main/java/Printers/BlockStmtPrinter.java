@@ -21,7 +21,7 @@ public class BlockStmtPrinter extends AbstractPrinter {
     public void print(){
         System.out.println("\n----------------------- Block Statements -----------------------");
         for(Map.Entry<String, Integer> entry : collector.getSyncBlockStmtCollector().entrySet()){
-            System.out.printf("%35s | %35s \n", entry.getKey(), entry.getValue());
+            System.out.printf("%50s | %35s \n", entry.getKey(), entry.getValue());
         }
     }
 }
