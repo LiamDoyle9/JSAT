@@ -18,7 +18,7 @@ public class Run {
         //Collector object initialised
         HashMapCollector collector = new HashMapCollector();
         //Compilation unit (Root node) initialised
-        CompilationUnit cu = StaticJavaParser.parse(new File(FILE_PATH_4));
+        CompilationUnit cu = StaticJavaParser.parse(new File(FILE_PATH_1));
 
         new MethodCountVisitor().visit(cu, collector);
         new MethodCountPrinter(collector).print();
@@ -34,7 +34,6 @@ public class Run {
         new NestedBlockStmtVisitor().visit(cu, collector);
         new NestedSyncBlockStmtVisitor().visit(cu, collector);
         new BlockStmtPrinter(collector).print();
-
 
         new MethodStmtCountVisitor().visit(cu, collector);
         new MethodStmtCountPrinter(collector).print();

@@ -7,7 +7,7 @@ public class HashMapCollector implements Collector {
     protected static HashMap<String, Integer> methodLocCollector;
     protected static HashMap<String, Integer> methodCountCollector;
     protected static HashMap<String, Integer> javaDocCollector;
-    protected static HashMap<String, Integer> syncBlockStmtCollector;
+    protected static HashMap<String, Integer> blockStmtCollector;
     protected static HashMap<String, Integer> methodStmtCountCollector;
 
     /**
@@ -17,7 +17,7 @@ public class HashMapCollector implements Collector {
         methodLocCollector = new HashMap<>();
         methodCountCollector = new HashMap<>();
         javaDocCollector = new HashMap<>();
-        syncBlockStmtCollector = new HashMap<>();
+        blockStmtCollector = new HashMap<>();
         methodStmtCountCollector = new HashMap<>();
     }
 
@@ -48,21 +48,6 @@ public class HashMapCollector implements Collector {
     }
 
     /**
-     * Increment the value with corresponding key (methodName). If key already
-     * exists in Collector object, then the value is incremented by 1, else
-     * a new entry is created with an initial value of 1.
-     * @param methodName
-     */
-    public void incrementMethodCount(String methodName){
-        if (methodCountCollector.containsKey(methodName)){
-            methodCountCollector.put(methodName, methodCountCollector.get(methodName) + 1);
-        } else {
-            methodCountCollector.put(methodName, 1);
-        }
-    }
-
-
-    /**
      * Get javaDocCollector object
      * @return
      */
@@ -74,8 +59,8 @@ public class HashMapCollector implements Collector {
      * get syncBlockStmtCollector object
      * @return
      */
-    public static HashMap<String, Integer> getSyncBlockStmtCollector() {
-        return syncBlockStmtCollector;
+    public static HashMap<String, Integer> getBlockStmtCollector() {
+        return blockStmtCollector;
     }
 
     /**
@@ -87,6 +72,15 @@ public class HashMapCollector implements Collector {
     }
 
 
+    /**
+     * Return size of collector object
+     * @param collector - First parameter represents the collector object
+     * @return
+     */
+    public int getSize(HashMap collector){
+        return collector.size();
+    }
+
 
 
 
@@ -96,10 +90,24 @@ public class HashMapCollector implements Collector {
 
 
     /**
+     * Increment the value with corresponding key (methodName). If key already
+     * exists in Collector object, then the value is incremented by 1, else
+     * a new entry is created with an initial value of 1.
+     * @param methodName - First parameter represents the method name
+     */
+    public void incrementMethodCount(String methodName){
+        if (methodCountCollector.containsKey(methodName)){
+            methodCountCollector.put(methodName, methodCountCollector.get(methodName) + 1);
+        } else {
+            methodCountCollector.put(methodName, 1);
+        }
+    }
+
+    /**
      * Increment the value with corresponding key (commentType). If key already
      * exists in Collector object, then the value is incremented by 1, else
      * a new entry is created with an initial value of 1.
-     * @param commentType
+     * @param commentType - First parameter represents comment type
      */
     public void incrementJavaDocCollector(String commentType){
         if(javaDocCollector.containsKey(commentType)){
@@ -113,13 +121,13 @@ public class HashMapCollector implements Collector {
      * Increment the value with corresponding key (metricName). If key already
      * exists in Collector object, then the value is incremented by 1, else
      * a new entry is created with an initial value of 1.
-     * @param metricName
+     * @param metricName - First parameter represents the name of the metric
      */
     public void incrementBlockStmtCollector(String metricName){
-        if (syncBlockStmtCollector.containsKey(metricName)){
-            syncBlockStmtCollector.put(metricName, syncBlockStmtCollector.get(metricName) + 1);
+        if (blockStmtCollector.containsKey(metricName)){
+            blockStmtCollector.put(metricName, blockStmtCollector.get(metricName) + 1);
         } else {
-            syncBlockStmtCollector.put(metricName, 1);
+            blockStmtCollector.put(metricName, 1);
         }
     }
 
