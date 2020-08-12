@@ -39,8 +39,6 @@ public class HashMapCollector implements Collector {
     }
 
 
-
-
     /**
      * Get methodCountCollector object
      * @return
@@ -73,6 +71,31 @@ public class HashMapCollector implements Collector {
     }
 
     /**
+     * get syncBlockStmtCollector object
+     * @return
+     */
+    public static HashMap<String, Integer> getSyncBlockStmtCollector() {
+        return syncBlockStmtCollector;
+    }
+
+    /**
+     * Get methodStmtCountCollector object
+     * @return
+     */
+    public static HashMap<String, Integer> getMethodStmtCountCollector() {
+        return methodStmtCountCollector;
+    }
+
+
+
+
+
+
+
+
+
+
+    /**
      * Increment the value with corresponding key (commentType). If key already
      * exists in Collector object, then the value is incremented by 1, else
      * a new entry is created with an initial value of 1.
@@ -84,15 +107,6 @@ public class HashMapCollector implements Collector {
         } else {
             javaDocCollector.put(commentType, 1);
         }
-    }
-
-
-    /**
-     * get syncBlockStmtCollector object
-     * @return
-     */
-    public static HashMap<String, Integer> getSyncBlockStmtCollector() {
-        return syncBlockStmtCollector;
     }
 
     /**
@@ -107,15 +121,6 @@ public class HashMapCollector implements Collector {
         } else {
             syncBlockStmtCollector.put(metricName, 1);
         }
-    }
-
-
-    /**
-     * Get methodStmtCountCollector object
-     * @return
-     */
-    public static HashMap<String, Integer> getMethodStmtCountCollector() {
-        return methodStmtCountCollector;
     }
 
     /**

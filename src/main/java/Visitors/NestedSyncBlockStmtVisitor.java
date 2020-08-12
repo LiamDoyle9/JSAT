@@ -9,6 +9,7 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
  * nested synchronised block statements
  */
 public class NestedSyncBlockStmtVisitor extends VoidVisitorAdapter<Collector>{
+
     /**
      * Override the VoidVisitorAdapter visit method to visit each
      * SynchronizedStmt node in the AST and collect the total number of
@@ -17,6 +18,7 @@ public class NestedSyncBlockStmtVisitor extends VoidVisitorAdapter<Collector>{
      * @param collector - Second node represents the Collector object used
      *                  to store information about each node visited
      */
+    @Override
     public void visit(SynchronizedStmt bs, Collector collector){
         super.visit(bs, collector);
         int count = bs.getChildNodesByType(SynchronizedStmt.class).size();
@@ -24,5 +26,4 @@ public class NestedSyncBlockStmtVisitor extends VoidVisitorAdapter<Collector>{
             collector.incrementBlockStmtCollector("(Synchronised) Nested Block");
         }
     }
-
 }

@@ -4,6 +4,7 @@
     <excludeFromCompile>
       <file url="file://$PROJECT_DIR$/src/main/java/GenericObjectPool.java" />
       <file url="file://$PROJECT_DIR$/src/main/java/RollingFileAppender.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/AlarmClock.java" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
