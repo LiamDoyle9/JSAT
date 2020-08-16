@@ -42,7 +42,6 @@ class HashMapCollectorTest {
         assertEquals(1, HashMapCollector.getMethodStmtCountCollector().size());
     }
 
-
     @Test
     void size(){
         collector.addLoc("MethodOne", 1);
