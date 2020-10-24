@@ -15,7 +15,7 @@ The Java Static Analysis Tool (JSAT) is a tool to collect quantitative data on a
     4.  Nested Synchronised Block Statements (NSBS)
     4.  Block Statements (BS)
     4.  Nested Block Statements (NBS)
-5.  Method Statement Count (MSc)
+5.  Method Statement Count (MSc).
 
 
 
